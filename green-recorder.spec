@@ -3,7 +3,7 @@
 Name: green-recorder
 Summary: A simple yet functional desktop recorder for Linux systems. Supports both Xorg server and Wayland (GNOME).
 URL: https://github.com/foss-project/green-recorder
-Version: 3.2.1
+Version: 3.2.3
 Release: 1%{?dist}
 Source: https://github.com/foss-project/green-recorder/archive/%{version}.tar.gz
 License: GPLv3
@@ -43,6 +43,9 @@ A simple desktop recorder for Linux systems. Supports both Xorg server and Wayla
 %{_datadir}/pixmaps/%{name}.png
 
 %changelog
+
+* Sun Jun 30 2019 Unitedrpms Project <unitedrpms AT protonmail DOT com> 3.2.3-1
+- Updated to 3.2.3
 
 * Fri Feb 15 2019 Unitedrpms Project <unitedrpms AT protonmail DOT com> 3.2.1-1
 - Updated to 3.2.1
