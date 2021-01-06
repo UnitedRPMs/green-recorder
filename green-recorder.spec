@@ -3,20 +3,20 @@
 Name: green-recorder
 Summary: A simple yet functional desktop recorder for Linux systems. Supports both Xorg server and Wayland (GNOME).
 URL: https://github.com/foss-project/green-recorder
-Version: 3.2.3
+Version: 3.2.8
 Release: 1%{?dist}
-Source: https://github.com/foss-project/green-recorder/archive/%{version}.tar.gz
+Source: https://github.com/dvershinin/green-recorder/archive/%{version}.tar.gz
 License: GPLv3
 BuildArch: noarch
-BuildRequires: python2-devel
+BuildRequires: python3-devel
 BuildRequires: gettext
-Requires: python2
-Requires: python2-pydbus
+Requires: python3
+Requires: python3-pydbus
 Requires: ffmpeg
 Requires: gawk
 Requires: libappindicator-gtk3
-Requires: python2-urllib3
-Requires: python-configparser
+Requires: python3-urllib3
+Recommends: python3-configparser
 Requires: pulseaudio
 Requires: ImageMagick
 Requires: xdg-utils
@@ -28,21 +28,24 @@ A simple desktop recorder for Linux systems. Supports both Xorg server and Wayla
 %autosetup -n %{name}-%{version}
 
 %build
-%py2_build
+%py3_build
 
 %install
-%py2_install
+%py3_install
 
 %find_lang %{name}
  
 %files -f %{name}.lang
 %{_bindir}/%{name}
-%{python2_sitelib}/*
+%{python3_sitelib}/*
 %{_datadir}/%{name}/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
 
 %changelog
+
+* Wed Jan 06 2021 Unitedrpms Project <unitedrpms AT protonmail DOT com> 3.2.8-1
+- Updated to 3.2.8
 
 * Thu Jul 11 2019 Unitedrpms Project <unitedrpms AT protonmail DOT com> 3.2.3-1
 - Updated to 3.2.3
